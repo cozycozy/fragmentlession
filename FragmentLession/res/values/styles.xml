@@ -1,0 +1,59 @@
+<resources>
+    
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+		<item name="android:actionBarItemBackground">@drawable/item_background</item>
+		<item name="android:actionBarStyle">@style/CustomActionBarStyle</item>
+	</style>
+
+    <!-- Application theme. -->
+    <style name="CustomActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+		<item name="android:background">@drawable/ab_solid_main_color</item>
+    </style>
+
+    <style name="ConponentTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:listChoiceIndicatorMultiple">@drawable/btn_check</item>
+        <item name="android:listChoiceIndicatorSingle">@drawable/btn_radio</item>
+        <item name="android:editTextBackground">@drawable/edit_text</item>
+        <item name="android:progressBarStyleHorizontal">@style/ProgressBarHorizontalStyle</item>
+        <item name="android:seekBarStyle">@style/SeekBarStyle</item>
+        <item name="android:ratingBarStyle">@style/RatingBarStyle</item>
+        <item name="android:buttonStyleToggle">@style/ToggleButtonStyle</item>
+        <item name="android:buttonStyle">@style/ButtonStyle</item>
+    </style>
+
+    <style name="ButtonStyle" parent="android:Widget.Holo.Light.Button">
+        <item name="android:background">@drawable/btn_default</item>
+        <item name="android:textColor">#fff</item>
+    </style>
+
+    <style name="ToggleButtonStyle" parent="android:Widget.Holo.Light.Button.Toggle">
+        <item name="android:background">@drawable/btn_toggle</item>
+    </style>
+
+    <style name="RatingBarStyle" parent="android:Widget.Holo.Light.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_full</item>
+        <item name="android:indeterminateDrawable">@drawable/ratingbar_full</item>
+    </style>
+
+    <style name="SeekBarStyle" parent="android:Widget.Holo.Light.SeekBar">
+        <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal</item>
+        <item name="android:indeterminateDrawable">@drawable/scrubber_progress_horizontal</item>
+        <item name="android:thumb">@drawable/scrubber_control_selector</item>
+        <item name="android:thumbOffset">16dip</item>
+        <item name="android:paddingLeft">16dip</item>
+        <item name="android:paddingRight">16dip</item>
+    </style>
+
+    <style name="ProgressBarHorizontalStyle" parent="android:Widget.Holo.Light.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_horizontal</item>
+        <item name="android:indeterminateDrawable">@drawable/progress_indeterminate_horizontal</item>
+        <item name="android:minHeight">16dip</item>
+        <item name="android:maxHeight">16dip</item>
+    </style>
+
+    <style name="SwitchStyle">
+        <item name="android:track">@drawable/switch_track</item>
+        <item name="android:thumb">@drawable/switch_inner</item>
+    </style>
+    
+</resources>

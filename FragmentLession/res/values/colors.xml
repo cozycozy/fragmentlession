@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="main_color">#e56200</color>
+    <color name="main_color_light">#FFE1CC</color>
+    
+    <color name="selector_transparent1">#33ffffff</color>
+    <color name="selector_transparent2">#22ffffff</color>
+    
+</resources>
