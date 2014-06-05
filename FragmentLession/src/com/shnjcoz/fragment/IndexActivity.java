@@ -1,6 +1,14 @@
 package com.shnjcoz.fragment;
 
+import com.shnjcoz.fragment.common.HttpTask;
+import com.shnjcoz.fragment.common.Callback;
+
 import java.util.HashMap;
+import java.util.Map;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,9 +20,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
+import android.widget.ArrayAdapter; 
 
-public class IndexActivity extends Activity implements OnItemClickListener{
+public class IndexActivity extends Activity implements OnItemClickListener,Callback{
 
 	private ArrayAdapter<String> adapter;
 	private HashMap<Integer, String> listValue = new HashMap<Integer, String>();
@@ -23,17 +31,9 @@ public class IndexActivity extends Activity implements OnItemClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_index);
-		ListView listView = (ListView) findViewById(R.id.listView1);
-		makeListValue();
 		
-		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
-		for(int i=0; i < listValue.size(); i++){
-			String[] str = listValue.get(i).split("/");
-			adapter.add(str[0]);		
-		}
-		
-		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(this);
+		final HttpTask httpTask = new HttpTask(IndexActivity.this,"1");
+		httpTask.execute();
 		
 	}
 
@@ -58,13 +58,35 @@ public class IndexActivity extends Activity implements OnItemClickListener{
 		}
 		
 	}
-	
-	private void makeListValue(){
-		listValue.put(0, "FixedTab/FixedTabActivity");
-		listValue.put(1, "Component/ComponentActivity");
-		listValue.put(2, "Spinner/SpinnerActivity");
-		listValue.put(3, "CustomeActionBar/CustomizedActionBar");
-		listValue.put(4, "ActionItem1/ActionItem1Activity");
+
+	@Override
+	public void callback(String responseCode, String requestCode,
+			Map<String, JSONObject> resultMap) {
+		
+		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);		
+		try {
+			JSONObject json = resultMap.get("responseJson");
+			Log.i("IndexActivity","json :" + json.toString());
+			JSONArray activityArray = json.getJSONArray("activity");
+			for(int i = 0; i < activityArray.length(); i++){
+				JSONObject activityObject = activityArray.getJSONObject(i);
+				Log.i("indextActivity", activityObject.getString("key"));
+				Log.i("indextActivity", activityObject.getString("DisplayName"));
+				Log.i("indextActivity", activityObject.getString("ClassName"));
+				listValue.put(i, activityObject.getString("DisplayName")+"/"+activityObject.getString("ClassName"));
+			}			
+		} catch (JSONException e) {
+			// TODO: handle exception
+		}
+
+		for(int i=0; i < listValue.size(); i++){
+			String[] str = listValue.get(i).split("/");
+			adapter.add(str[0]);		
+		}
+		ListView listView = (ListView) findViewById(R.id.listView1);
+		listView.setAdapter(adapter);
+		listView.setOnItemClickListener(this);		
+
 	}
 	
 
