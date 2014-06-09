@@ -63,4 +63,9 @@ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </string>
     
+    <string name="facebook_appId">1387993078099198</string>
+    <string name="login_string">Login</string>
+    <string name="logout_string">Logout</string>
+    
+    
 </resources>

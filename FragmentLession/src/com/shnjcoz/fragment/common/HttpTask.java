@@ -12,7 +12,6 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -27,6 +26,8 @@ public class HttpTask extends AsyncTask<Void, Void, Void> {
 	
 	private String responseCode;
 	
+	private String fbid; 
+	
 	private Map<String, JSONObject> resultMap;
 	
 	public HttpTask(final Callback callback, final String requestCode){
@@ -37,6 +38,14 @@ public class HttpTask extends AsyncTask<Void, Void, Void> {
 		resultMap = new HashMap<String, JSONObject>();
 	}
 	
+	public HttpTask(final Callback callback, String requestCode, String fbid) {
+		this.callback = callback;		
+		this.requestCode = requestCode;
+		this.responseCode = "";
+		this.fbid = fbid;
+		resultMap = new HashMap<String, JSONObject>();
+	}
+
 	@Override
 	protected void onPostExecute(Void result) {
 		callback.callback(responseCode, requestCode, resultMap);
@@ -45,7 +54,14 @@ public class HttpTask extends AsyncTask<Void, Void, Void> {
 	@Override
 	protected Void doInBackground(Void... params) {
 		Log.i("HttpTask","Start doInBackground");
-		String url = "http://10.0.2.2:9000/list";
+		String url = "";
+		if(requestCode == "1"){
+			url = "http://10.0.2.2:9000/list";			
+		}else if (requestCode == "2") {
+			url = "http://10.0.2.2:9000/get?id=" + fbid;			
+		}{
+			url = "http://10.0.2.2:9000/list";
+		}
 		HttpGet request = new HttpGet( url );
 		HttpClient httpClient = new DefaultHttpClient();
 		try {
