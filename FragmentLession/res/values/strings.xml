@@ -5,7 +5,8 @@
     <string name="title_name">Patter Cookbook</string>
     <string name="setting">Settings</string>
     <string name="camera">Camera</string>
-
+    <string name="action_add">Add</string>
+    
     <string name="username">Username</string>
     <string name="sw">Switch</string>
     <string name="toggle">ToggleButton</string>
