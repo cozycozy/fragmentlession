@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -24,7 +25,7 @@ public class DrawerItemView extends LinearLayout {
 
 	public DrawerItemView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
-	
+		Log.i("","");
 		TypedArray array = context.obtainStyledAttributes(
 				attrs, com.shnjcoz.fragment.R.styleable.DrawerItemView,defStyle, 0);
 	
