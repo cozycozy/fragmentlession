@@ -50,6 +50,11 @@
             android:theme="@style/ConponentTheme" >
         </activity>
         <activity
+            android:name="com.shnjcoz.fragment.DrawerItemActivity"
+            android:label="@string/title_name"
+            android:theme="@style/ConponentTheme" >
+        </activity>
+        <activity
             android:name="com.shnjcoz.fragment.LoginActivity"
             android:label="@string/title_name"
             android:theme="@style/ConponentTheme" >
