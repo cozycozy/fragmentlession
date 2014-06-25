@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+	<string name="collections">Collections</string>
+	<string name="send">Send</string>
+	<string name="favorites">Favorites</string>
+	<string name="share">Share</string>
+    <string name="icon">icon</string>
+	
     <string name="app_name">FragmentLession</string>
     <string name="title_name">Patter Cookbook</string>
     <string name="setting">Settings</string>
     <string name="camera">Camera</string>
     <string name="action_add">Add</string>
+    
     
     <string name="username">Username</string>
     <string name="sw">Switch</string>

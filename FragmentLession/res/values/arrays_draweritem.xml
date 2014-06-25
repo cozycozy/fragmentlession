@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="drawer_items">
+	    <item>@string/collections</item>
+		<item>@string/send</item>
+		<item>@string/favorites</item>
+		<item>@string/share</item>
+	</string-array>
+
+</resources>
