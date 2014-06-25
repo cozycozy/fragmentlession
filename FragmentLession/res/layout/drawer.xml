@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res/com.shnjcoz.fragment"
+	xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:background="#2a2a2a"
+    android:orientation="vertical"
+    tools:ignore="Overdraw" >
+    
+    <com.shnjcoz.fragment.view.DrawerItemView
+        android:id="@+id/collections"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/item_background"
+        app:src="@drawable/ic_action_collection"
+        app:text="@string/collections"
+        />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/divider" />
+
+    <com.shnjcoz.fragment.view.DrawerItemView
+        android:id="@+id/send"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/item_background"
+        app:count="0"
+        app:src="@drawable/ic_action_send_now"
+        app:text="@string/send" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/divider" />
+
+    <com.shnjcoz.fragment.view.DrawerItemView
+        android:id="@+id/favorites"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/item_background"
+        app:src="@drawable/ic_action_favorite"
+        app:text="@string/favorites" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/divider" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/divider" />
+
+    <com.shnjcoz.fragment.view.DrawerItemView
+        android:id="@+id/share"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/item_background"
+        app:src="@drawable/ic_action_share"
+        app:text="@string/share" />
+
+</LinearLayout>
